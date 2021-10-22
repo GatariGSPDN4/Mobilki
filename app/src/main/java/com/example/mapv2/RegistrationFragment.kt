@@ -17,7 +17,7 @@ private const val ARG_PARAM2 = "param2"
 class RegistrationFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
-    private lateinit var binding : FragmentRegistrationBinding
+    private lateinit var binding: FragmentRegistrationBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +31,7 @@ class RegistrationFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentRegistrationBinding.inflate(inflater,container,false)
+        binding = FragmentRegistrationBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -49,16 +49,27 @@ class RegistrationFragment : Fragment() {
 
         val users: List<User> = (activity as MainActivity).userDao.getAll()
 
+        binding.checkBox.setOnClickListener {
+            binding.regBtn.isEnabled = binding.checkBox.isChecked
+        }
+
         binding.regBtn.setOnClickListener {
-            if (binding.checkBox.isChecked) {
-                val inputedText = recyclerAdapter.getInputedText()
-                val userData : User = User(inputedText[0],inputedText[1],inputedText[2])
-                if (DataValidator.validateReg(userData,inputedText[3],requireContext(), (activity as MainActivity).userDao)) {
-                    userLoginManager.register(userData)
-                    (activity as MainActivity).userDao.insert(userData)
-                    this.findNavController().navigate(R.id.action_registrationFragment_to_finalFragment2)
-                }
+
+            val inputedText = recyclerAdapter.getInputedText()
+            val userData: User = User(inputedText[0], inputedText[1], inputedText[2])
+            if (DataValidator.validateReg(
+                    userData,
+                    inputedText[3],
+                    requireContext(),
+                    (activity as MainActivity).userDao
+                )
+            ) {
+                userLoginManager.register(userData)
+                (activity as MainActivity).userDao.insert(userData)
+                this.findNavController()
+                    .navigate(R.id.action_registrationFragment_to_finalFragment2)
             }
+
         }
 
         binding.logBtn.setOnClickListener {
@@ -68,14 +79,30 @@ class RegistrationFragment : Fragment() {
 
     private fun fillList(): List<InputTypeItem> {
         val data = mutableListOf<InputTypeItem>()
-        data.add(InputTypeItem(getString(R.string.NameString),
-            InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PERSON_NAME))
-        data.add(InputTypeItem(getString(R.string.EmailString),
-            InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS))
-        data.add(InputTypeItem(getString(R.string.PasswordString),
-            InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD))
-        data.add(InputTypeItem(getString(R.string.PasswordRepString),
-            InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD))
+        data.add(
+            InputTypeItem(
+                getString(R.string.NameString),
+                InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PERSON_NAME
+            )
+        )
+        data.add(
+            InputTypeItem(
+                getString(R.string.EmailString),
+                InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS
+            )
+        )
+        data.add(
+            InputTypeItem(
+                getString(R.string.PasswordString),
+                InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            )
+        )
+        data.add(
+            InputTypeItem(
+                getString(R.string.PasswordRepString),
+                InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            )
+        )
         return data
     }
 
