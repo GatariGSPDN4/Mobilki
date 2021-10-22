@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.room.Dao
 import com.example.mapv2.databinding.FragmentLoginBinding
 
 private const val ARG_PARAM1 = "param1"
@@ -30,7 +31,7 @@ class LoginFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentLoginBinding.inflate(inflater,container,false)
         return binding.root
     }
@@ -38,19 +39,18 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var userLoginManager: UserLoginManager = UserLoginManager(requireContext())
+        val userLoginManager: UserLoginManager = UserLoginManager(requireContext())
         val recyclerView: RecyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = CustomRecyclerAdapter(fillList())
-        var recyclerAdapter = recyclerView?.adapter as CustomRecyclerAdapter
+        val recyclerAdapter = recyclerView.adapter as CustomRecyclerAdapter
 
         binding.logBtn.setOnClickListener {
             val inputedText = recyclerAdapter.getInputedText()
-            if (userLoginManager.checkData(inputedText[0],inputedText[1])) {
+
+            if (DataValidator.validateLog(inputedText[0], inputedText[1],requireContext(),(activity as MainActivity).userDao)) {
                 userLoginManager.login()
                 this.findNavController().navigate(R.id.action_loginFragment2_to_finalFragment2)
-            } else {
-                DialogueWindow.showText("Такого аккаунта не существует", requireContext())
             }
         }
 
@@ -61,9 +61,9 @@ class LoginFragment : Fragment() {
 
     private fun fillList(): List<InputTypeItem> {
         val data = mutableListOf<InputTypeItem>()
-        data.add(InputTypeItem("Name",
+        data.add(InputTypeItem(getString(R.string.NameString),
             InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PERSON_NAME))
-        data.add(InputTypeItem("Password",
+        data.add(InputTypeItem(getString(R.string.PasswordString),
             InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD))
         return data
     }

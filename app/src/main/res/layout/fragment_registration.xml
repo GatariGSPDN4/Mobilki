@@ -15,9 +15,9 @@
         android:id="@+id/regBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="28dp"
-        android:text="Зарегистрироваться"
+        android:text="@string/ToRegistrBtnString"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBox" />
 
@@ -26,7 +26,7 @@
         android:layout_width="184dp"
         android:layout_height="48dp"
         android:layout_marginTop="56dp"
-        android:text="Согласен с правилами"
+        android:text="@string/TermsOfAgreementBtnString"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,10 +36,10 @@
         android:id="@+id/logBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:text="Войти"
+        android:layout_marginEnd="28dp"
+        android:text="@string/LoginBtnString"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.539"
         app:layout_constraintStart_toEndOf="@+id/regBtn"
         app:layout_constraintTop_toTopOf="@+id/regBtn" />
 

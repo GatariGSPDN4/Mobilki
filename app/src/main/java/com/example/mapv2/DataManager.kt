@@ -9,23 +9,24 @@ class DataManager(context: Context) {
     private var sharedPrefer = context.getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE)
     private var editor : SharedPreferences.Editor = sharedPrefer.edit()
 
-    fun writeData(userData: UserData) {
-        editor.putString(APP_PREFERENCES,"${userData.name} ${userData.mail} ${userData.password}")
+    fun writeData(userData: User) {
+        editor.putString(APP_PREFERENCES,"${userData.name} ${userData.mail} ${userData.password} ${userData.id}")
         editor.apply()
     }
 
-    fun readData(): UserData {
+    fun readData(): User {
         val tempString:List<String>? =
             sharedPrefer.getString(APP_PREFERENCES,"")?.split(" ")
-        val userData: UserData
+        val userData: User
         if  (!tempString!!.isEmpty()) {
-            userData = UserData(
+            userData = User(
                 tempString.get(0),
                 tempString.get(1),
-                tempString.get(2)
+                tempString.get(2),
+                tempString.get(3).toInt()
             )
         } else {
-            userData = UserData("","","")
+            userData = User("","","")
         }
         return userData
     }

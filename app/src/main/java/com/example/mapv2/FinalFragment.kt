@@ -29,13 +29,14 @@ class FinalFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentFinalBinding.inflate(inflater,container,false)
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val dataManager:DataManager = DataManager(requireContext())
-        val userData:UserData = dataManager.readData()
+        val userData:User = dataManager.readData()
 
         binding.nameText.setText("${binding.nameText.text} ${userData.name}")
         binding.mailText.setText("${binding.mailText.text} ${userData.mail}")
@@ -44,8 +45,18 @@ class FinalFragment : Fragment() {
         val userLoginManager:UserLoginManager = UserLoginManager(requireContext())
 
         binding.unLogBtn.setOnClickListener {
-            userLoginManager.unlogin()
+            userLoginManager.unLogin()
             this.findNavController().navigate(R.id.action_finalFragment2_to_registrationFragment)
+        }
+
+        binding.dbCheckBtn.setOnClickListener {
+            for (user in (activity as MainActivity).userDao.getAll()) {
+                println(user.toString())
+            }
+        }
+
+        binding.deleteDbBtn.setOnClickListener {
+            (activity as MainActivity).userDao.deleteAll()
         }
     }
     companion object {

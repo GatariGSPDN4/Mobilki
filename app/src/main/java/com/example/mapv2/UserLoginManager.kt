@@ -6,7 +6,7 @@ class UserLoginManager(context: Context) {
 
     private val dataManager = DataManager(context)
 
-    fun register(data: UserData) {
+    fun register(data: User) {
         dataManager.writeData(data)
         login()
     }
@@ -15,7 +15,7 @@ class UserLoginManager(context: Context) {
         dataManager.writeState(true)
     }
 
-    fun unlogin() {
+    fun unLogin() {
         dataManager.writeState(false)
     }
 

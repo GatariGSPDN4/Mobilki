@@ -2,4 +2,22 @@
     <string name="app_name">MapV2</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="NameString">Name</string>
+    <string name="EmailString">Email</string>
+    <string name="PasswordString">Password</string>
+    <string name="PasswordRepString">Password again</string>
+    <string name="AccountNotExistString">Такого аккаунта не существует</string>
+    <string name="EnterNameString">Введите имя!</string>
+    <string name="EnterEmailString">Введите email!</string>
+    <string name="WrongEmailString">Неправильный email!</string>
+    <string name="EnterPasswordString">Введите пароль!</string>
+    <string name="EnterPasswordAgainString">Введите пароль ещё раз!</string>
+    <string name="PasswordsNotMatchString">Пароли не совпадают!</string>
+    <string name="RegistrationBtnString">Регистрация</string>
+    <string name="LoginBtnString">Войти</string>
+    <string name="TermsOfAgreementBtnString">Согласен с правилами</string>
+    <string name="ToRegistrBtnString">Зарегистрироваться</string>
+    <string name="ThisAccountAlreadyExistString">Аккаунт с такой почтой уже существует!</string>
+    <string name="ThisAccountNotExistString">Такого аккаунта не существует!</string>
+    <string name="PasswordNotMatchString">Пароль не подходит</string>
 </resources>
