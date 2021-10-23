@@ -9,5 +9,6 @@ data class User (
     @ColumnInfo(name = "name") var name: String?,
     @ColumnInfo(name = "mail") var mail: String?,
     @ColumnInfo(name = "password") var password: String?,
-    @PrimaryKey(autoGenerate = true) var id: Int = 0
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "id")var id: Int = 0
 )

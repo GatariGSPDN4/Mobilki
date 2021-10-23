@@ -4,19 +4,19 @@ import android.content.Context
 import android.content.SharedPreferences
 
 class DataManager(context: Context) {
-    private val APP_PREFERENCES = "Login"
+    private val APP_PREFERENCES_DATA = "LoginData"
     private val APP_PREFERENCES_IS_LOGGED = "IsLogged"
-    private var sharedPrefer = context.getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE)
+    private var sharedPrefer = context.getSharedPreferences(APP_PREFERENCES_DATA, Context.MODE_PRIVATE)
     private var editor : SharedPreferences.Editor = sharedPrefer.edit()
 
     fun writeData(userData: User) {
-        editor.putString(APP_PREFERENCES,"${userData.name} ${userData.mail} ${userData.password} ${userData.id}")
+        editor.putString(APP_PREFERENCES_DATA,"${userData.name} ${userData.mail} ${userData.password} ${userData.id}")
         editor.apply()
     }
 
     fun readData(): User {
         val tempString:List<String>? =
-            sharedPrefer.getString(APP_PREFERENCES,"")?.split(" ")
+            sharedPrefer.getString(APP_PREFERENCES_DATA,"")?.split(" ")
         val userData: User
         if  (!tempString!!.isEmpty()) {
             userData = User(

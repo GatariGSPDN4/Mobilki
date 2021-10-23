@@ -48,16 +48,7 @@ class FinalFragment : Fragment() {
             userLoginManager.unLogin()
             this.findNavController().navigate(R.id.action_finalFragment2_to_registrationFragment)
         }
-
-        binding.dbCheckBtn.setOnClickListener {
-            for (user in (activity as MainActivity).userDao.getAll()) {
-                println(user.toString())
-            }
-        }
-
-        binding.deleteDbBtn.setOnClickListener {
-            (activity as MainActivity).userDao.deleteAll()
-        }
+        
     }
     companion object {
         @JvmStatic

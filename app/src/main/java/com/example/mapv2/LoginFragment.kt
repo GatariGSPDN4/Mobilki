@@ -49,6 +49,7 @@ class LoginFragment : Fragment() {
             val inputedText = recyclerAdapter.getInputedText()
 
             if (DataValidator.validateLog(inputedText[0], inputedText[1],requireContext(),(activity as MainActivity).userDao)) {
+                userLoginManager.register((activity as MainActivity).userDao.findByMail(inputedText[0]))
                 userLoginManager.login()
                 this.findNavController().navigate(R.id.action_loginFragment2_to_finalFragment2)
             }
@@ -61,7 +62,7 @@ class LoginFragment : Fragment() {
 
     private fun fillList(): List<InputTypeItem> {
         val data = mutableListOf<InputTypeItem>()
-        data.add(InputTypeItem(getString(R.string.NameString),
+        data.add(InputTypeItem(getString(R.string.EmailString),
             InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PERSON_NAME))
         data.add(InputTypeItem(getString(R.string.PasswordString),
             InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD))

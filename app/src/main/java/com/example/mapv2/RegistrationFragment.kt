@@ -46,16 +46,17 @@ class RegistrationFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = CustomRecyclerAdapter(fillList())
         val recyclerAdapter = recyclerView.adapter as CustomRecyclerAdapter
+        lateinit var inputedText : Array<String>
+        var enableButton = false;
 
         val users: List<User> = (activity as MainActivity).userDao.getAll()
 
         binding.checkBox.setOnClickListener {
+            inputedText = recyclerAdapter.getInputedText()
             binding.regBtn.isEnabled = binding.checkBox.isChecked
         }
 
         binding.regBtn.setOnClickListener {
-
-            val inputedText = recyclerAdapter.getInputedText()
             val userData: User = User(inputedText[0], inputedText[1], inputedText[2])
             if (DataValidator.validateReg(
                     userData,
