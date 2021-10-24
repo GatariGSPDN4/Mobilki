@@ -52,11 +52,11 @@ class RegistrationFragment : Fragment() {
         val users: List<User> = (activity as MainActivity).userDao.getAll()
 
         binding.checkBox.setOnClickListener {
-            inputedText = recyclerAdapter.getInputedText()
             binding.regBtn.isEnabled = binding.checkBox.isChecked
         }
 
         binding.regBtn.setOnClickListener {
+            inputedText = recyclerAdapter.getInputedText()
             val userData: User = User(inputedText[0], inputedText[1], inputedText[2])
             if (DataValidator.validateReg(
                     userData,

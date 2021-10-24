@@ -48,7 +48,7 @@ class FinalFragment : Fragment() {
             userLoginManager.unLogin()
             this.findNavController().navigate(R.id.action_finalFragment2_to_registrationFragment)
         }
-        
+
     }
     companion object {
         @JvmStatic
