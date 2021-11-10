@@ -83,25 +83,29 @@ class RegistrationFragment : Fragment() {
         data.add(
             InputTypeItem(
                 getString(R.string.NameString),
-                InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PERSON_NAME
+                InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PERSON_NAME,
+                false
             )
         )
         data.add(
             InputTypeItem(
                 getString(R.string.EmailString),
-                InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS
+                InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS,
+                false
             )
         )
         data.add(
             InputTypeItem(
                 getString(R.string.PasswordString),
-                InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD,
+                true
             )
         )
         data.add(
             InputTypeItem(
                 getString(R.string.PasswordRepString),
-                InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD,
+                true
             )
         )
         return data

@@ -40,7 +40,11 @@ object DataValidator {
     private fun validateName(name : String,context:Context) : Boolean {
         if (name.isEmpty()) {
             DialogueWindow.showText(context.getString(R.string.EnterNameString), context)
-            return false;
+            return false
+        }
+        if (name.contains(" ")) {
+            DialogueWindow.showText(context.getString(R.string.NameSpacesString),context)
+            return false
         }
         return true
     }
@@ -60,6 +64,10 @@ object DataValidator {
     private fun validatePassword(password: String, context: Context) : Boolean {
         if (password.isEmpty()) {
             DialogueWindow.showText(context.getString(R.string.EnterPasswordString), context)
+            return false
+        }
+        if (password.contains(" ")) {
+            DialogueWindow.showText(context.getString(R.string.PasswordSpacesString),context)
             return false
         }
         return true

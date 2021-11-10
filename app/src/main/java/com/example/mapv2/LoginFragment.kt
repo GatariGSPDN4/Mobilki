@@ -63,9 +63,9 @@ class LoginFragment : Fragment() {
     private fun fillList(): List<InputTypeItem> {
         val data = mutableListOf<InputTypeItem>()
         data.add(InputTypeItem(getString(R.string.EmailString),
-            InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PERSON_NAME))
+            InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PERSON_NAME,false))
         data.add(InputTypeItem(getString(R.string.PasswordString),
-            InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD))
+            InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD,false))
         return data
     }
 
