@@ -22,4 +22,5 @@
     <string name="PasswordNotMatchString">Пароль не подходит</string>
     <string name="NameSpacesString">Имя не должно содержать пробелы</string>
     <string name="PasswordSpacesString">Пароль не должен содержать пробелы</string>
+    <string name="ExitFromAccountString">Выйти из аккаунта</string>
 </resources>

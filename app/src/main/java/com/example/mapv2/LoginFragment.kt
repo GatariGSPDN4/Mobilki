@@ -12,20 +12,11 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Dao
 import com.example.mapv2.databinding.FragmentLoginBinding
 
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
 class LoginFragment : Fragment() {
-    private var param1: String? = null
-    private var param2: String? = null
     lateinit var binding:FragmentLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
@@ -69,14 +60,4 @@ class LoginFragment : Fragment() {
         return data
     }
 
-    companion object {
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            LoginFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }
