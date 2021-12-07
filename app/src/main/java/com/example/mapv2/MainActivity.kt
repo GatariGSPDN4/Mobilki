@@ -2,9 +2,9 @@ package com.example.mapv2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
 import androidx.room.Room
+import com.example.mapv2.data.database.UserDao
+import com.example.mapv2.data.database.UserDatabase
 import com.example.mapv2.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val navController = binding.fragmentContainerView
-        val db = Room.databaseBuilder(this,UserDatabase::class.java,"user").fallbackToDestructiveMigration().allowMainThreadQueries().build()
+        val db = Room.databaseBuilder(this, UserDatabase::class.java,"user").fallbackToDestructiveMigration().allowMainThreadQueries().build()
         userDao = db.userDao()
     }
 }

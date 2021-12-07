@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
-        tools:context=".RegistrationFragment">
+        tools:context=".fragments.RegistrationFragment">
 
         <Button
             android:id="@+id/regBtn"
@@ -32,6 +32,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
+            tools:listitem="@layout/recycler_item"
             android:layout_width="match_parent"
             android:layout_height="472dp"
             app:layout_constraintStart_toStartOf="parent"

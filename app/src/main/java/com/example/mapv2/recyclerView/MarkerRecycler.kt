@@ -1,14 +1,11 @@
-package com.example.mapv2
+package com.example.mapv2.recyclerView
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.cardview.widget.CardView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mapv2.data.dataClasses.Marker
 import com.example.mapv2.databinding.MarkerItemBinding
-import com.example.mapv2.databinding.RecyclerItemBinding
-import org.w3c.dom.Text
 
 
 class MarkerRecycler(private val markers: Array<Marker>) :

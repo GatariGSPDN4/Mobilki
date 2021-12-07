@@ -1,4 +1,4 @@
-package com.example.mapv2
+package com.example.mapv2.fragments
 
 import android.os.Bundle
 import android.text.InputType
@@ -9,8 +9,13 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.room.Dao
+import com.example.mapv2.data.managers.DataValidator
+import com.example.mapv2.MainActivity
+import com.example.mapv2.R
+import com.example.mapv2.data.managers.UserLoginManager
+import com.example.mapv2.data.dataClasses.InputTypeItem
 import com.example.mapv2.databinding.FragmentLoginBinding
+import com.example.mapv2.recyclerView.InputRecycler
 
 class LoginFragment : Fragment() {
     lateinit var binding:FragmentLoginBinding
@@ -33,13 +38,19 @@ class LoginFragment : Fragment() {
         val userLoginManager: UserLoginManager = UserLoginManager(requireContext())
         val recyclerView: RecyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = CustomRecyclerAdapter(fillList())
-        val recyclerAdapter = recyclerView.adapter as CustomRecyclerAdapter
+        recyclerView.adapter = InputRecycler(fillList())
+        val recyclerAdapter = recyclerView.adapter as InputRecycler
 
         binding.logBtn.setOnClickListener {
             val inputedText = recyclerAdapter.getInputedText()
 
-            if (DataValidator.validateLog(inputedText[0], inputedText[1],requireContext(),(activity as MainActivity).userDao)) {
+            if (DataValidator.validateLog(
+                    inputedText[0],
+                    inputedText[1],
+                    requireContext(),
+                    (activity as MainActivity).userDao
+                )
+            ) {
                 userLoginManager.register((activity as MainActivity).userDao.findByMail(inputedText[0]))
                 userLoginManager.login()
                 this.findNavController().navigate(R.id.action_loginFragment2_to_finalFragment2)
@@ -53,10 +64,14 @@ class LoginFragment : Fragment() {
 
     private fun fillList(): List<InputTypeItem> {
         val data = mutableListOf<InputTypeItem>()
-        data.add(InputTypeItem(getString(R.string.EmailString),
-            InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PERSON_NAME,false))
-        data.add(InputTypeItem(getString(R.string.PasswordString),
-            InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD,false))
+        data.add(
+            InputTypeItem(getString(R.string.EmailString),
+            InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PERSON_NAME,false)
+        )
+        data.add(
+            InputTypeItem(getString(R.string.PasswordString),
+            InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD,false)
+        )
         return data
     }
 

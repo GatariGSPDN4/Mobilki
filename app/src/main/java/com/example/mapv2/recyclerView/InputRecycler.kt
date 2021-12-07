@@ -1,21 +1,17 @@
-package com.example.mapv2
+package com.example.mapv2.recyclerView
 
 import android.text.Editable
-import android.text.InputType
 import android.text.TextWatcher
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
-import android.widget.LinearLayout
-import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mapv2.data.dataClasses.InputTypeItem
 import com.example.mapv2.databinding.RecyclerItemBinding
 import com.google.android.material.textfield.TextInputLayout
 
-class CustomRecyclerAdapter(private val inputTypes: List<InputTypeItem>) :
-    RecyclerView.Adapter<CustomRecyclerAdapter.MyViewHolder>() {
+class InputRecycler(private val inputTypes: List<InputTypeItem>) :
+    RecyclerView.Adapter<InputRecycler.MyViewHolder>() {
 
     private val inputedTexts = Array(inputTypes.size) { _ -> "" }
 

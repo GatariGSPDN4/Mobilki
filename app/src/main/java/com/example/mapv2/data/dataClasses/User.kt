@@ -1,4 +1,4 @@
-package com.example.mapv2
+package com.example.mapv2.data.dataClasses
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

@@ -1,6 +1,7 @@
-package com.example.mapv2
+package com.example.mapv2.data.database
 
 import androidx.room.*
+import com.example.mapv2.data.dataClasses.User
 
 @Dao
 interface UserDao {

@@ -1,6 +1,7 @@
-package com.example.mapv2
+package com.example.mapv2.data.managers
 
 import android.content.Context
+import com.example.mapv2.data.dataClasses.User
 
 class UserLoginManager(context: Context) {
 

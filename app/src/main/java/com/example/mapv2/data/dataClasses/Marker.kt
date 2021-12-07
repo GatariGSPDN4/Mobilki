@@ -1,4 +1,4 @@
-package com.example.mapv2
+package com.example.mapv2.data.dataClasses
 
 import java.util.*
 
@@ -10,5 +10,5 @@ data class Marker(
     var name: String,
     var city: String,
     var street: String,
-    var description: String,
+    var description: String
 ) {}

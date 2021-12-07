@@ -1,4 +1,4 @@
-package com.example.mapv2
+package com.example.mapv2.fragments
 
 import android.os.Bundle
 import android.text.InputType
@@ -9,7 +9,14 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mapv2.data.managers.DataValidator
+import com.example.mapv2.MainActivity
+import com.example.mapv2.R
+import com.example.mapv2.data.managers.UserLoginManager
+import com.example.mapv2.data.dataClasses.InputTypeItem
+import com.example.mapv2.data.dataClasses.User
 import com.example.mapv2.databinding.FragmentRegistrationBinding
+import com.example.mapv2.recyclerView.InputRecycler
 
 class RegistrationFragment : Fragment() {
     private lateinit var binding: FragmentRegistrationBinding
@@ -35,8 +42,8 @@ class RegistrationFragment : Fragment() {
 
         val recyclerView: RecyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = CustomRecyclerAdapter(fillList())
-        val recyclerAdapter = recyclerView.adapter as CustomRecyclerAdapter
+        recyclerView.adapter = InputRecycler(fillList())
+        val recyclerAdapter = recyclerView.adapter as InputRecycler
         lateinit var inputedText : Array<String>
         var enableButton = false;
 
