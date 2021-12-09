@@ -4,7 +4,13 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class FoursquarePlaceModel (
+data class PlacesList (
+    @Json(name = "results")
+    val placeList: List<Place>
+)
+
+@JsonClass(generateAdapter = true)
+data class Place (
     @Json(name = "fsq_id")
     val fsq_id: String,
     @Json(name = "categories")
