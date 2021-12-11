@@ -12,52 +12,64 @@
 
 
         <TextView
-            android:id="@+id/nameText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="40sp"
-            android:text="Name:"
+            android:id="@+id/accountInfo"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text=""
+            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/mailText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="40sp"
-            android:text="Mail:"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nameText" />
-
-        <TextView
-            android:id="@+id/passwordText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Password:"
-            android:textSize="40sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mailText" />
 
         <Button
             android:id="@+id/unLogBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="52dp"
             android:text="@string/ExitFromAccountString"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/map" />
+            app:layout_constraintTop_toBottomOf="@+id/EditTextLayout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/EditTextLayout"
+            android:layout_width="256sp"
+            android:layout_height="50sp"
+            android:layout_marginTop="20sp"
+            android:layout_marginLeft="10sp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/map">
+
+            <EditText
+                android:id="@+id/placeNameText"
+                android:layout_width="256dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                app:passwordToggleEnabled="true"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/map"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
-            android:layout_height="478dp"
-            android:layout_marginTop="0dp"
+            android:layout_height="500dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/passwordText"
+            app:layout_constraintTop_toBottomOf="@+id/accountInfo"
             tools:context=".fragments.MapsFragment" />
+
+        <Button
+            android:id="@+id/findButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10sp"
+            android:text="Найти"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/EditTextLayout"
+            app:layout_constraintTop_toTopOf="@+id/EditTextLayout" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

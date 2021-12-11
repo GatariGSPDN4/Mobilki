@@ -1,12 +1,12 @@
-package com.example.mapv2.network
+package com.example.mapv2.data.network
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class PlacesList (
+data class JsonData (
     @Json(name = "results")
-    val placeList: List<Place>
+    public val places: List<Place>
 )
 
 @JsonClass(generateAdapter = true)
@@ -28,11 +28,11 @@ data class Place (
 @JsonClass(generateAdapter = true)
 data class GeoCodes(
     @Json(name = "main")
-    val main: Main
+    val main: Coords
 )
 
 @JsonClass(generateAdapter = true)
-data class Main(
+data class Coords(
     @Json(name = "latitude")
     val latitude: Double,
     @Json(name = "longitude")

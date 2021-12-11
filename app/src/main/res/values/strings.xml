@@ -23,4 +23,7 @@
     <string name="NameSpacesString">Имя не должно содержать пробелы</string>
     <string name="PasswordSpacesString">Пароль не должен содержать пробелы</string>
     <string name="ExitFromAccountString">Выйти из аккаунта</string>
+    <string name="APIKey">fsq3Ihfvr2KD6QqRjiPXO1modSLzKkoRD1e/TxhqdJJ5B10=</string>
+    <string name="acceptJson">application/json</string>
+    <string name="thereAroNoPlace">Таких мест нет</string>
 </resources>
