@@ -1,0 +1,124 @@
+{
+  "results": [
+    {
+      "fsq_id": "54a19ad6498ecb9bd6ff5caa",
+      "categories": [
+        {
+          "id": 13035,
+          "name": "Coffee Shop",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/coffeeshop_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "chains": [],
+      "distance": 12593,
+      "geocodes": {
+        "main": {
+          "latitude": 55.605845914363485,
+          "longitude": 37.28816553492498
+        }
+      },
+      "location": {
+        "address": "Терминал А",
+        "country": "RU",
+        "cross_street": "Аэропорт Внуково",
+        "locality": "Moscow",
+        "postcode": "119027",
+        "region": "Moscow"
+      },
+      "name": "Coffee & Beer House",
+      "related_places": {
+        "parent": {
+          "fsq_id": "4ce3fc8622bef04d74a3d6f8",
+          "name": "Терминал A / Terminal A"
+        }
+      },
+      "timezone": "Europe/Moscow"
+    },
+    {
+      "fsq_id": "5327e700498ee8e6c79bce43",
+      "categories": [
+        {
+          "id": 13035,
+          "name": "Coffee Shop",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/coffeeshop_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "chains": [],
+      "distance": 9994,
+      "geocodes": {
+        "main": {
+          "latitude": 55.74827774872753,
+          "longitude": 37.54024391986831
+        }
+      },
+      "location": {
+        "address": "Пресненская наб., 6",
+        "address_extended": "стр. 2",
+        "country": "RU",
+        "cross_street": "",
+        "locality": "Moscow",
+        "postcode": "",
+        "region": "Moscow"
+      },
+      "name": "The Coffee Bean & Tea Leaf",
+      "related_places": {
+        "parent": {
+          "fsq_id": "4dee18ea45dd3aa41d73dcb7",
+          "name": "Империя / Imperia Tower"
+        }
+      },
+      "timezone": "Europe/Moscow"
+    },
+    {
+      "fsq_id": "52315ce311d240039bbc4603",
+      "categories": [
+        {
+          "id": 13035,
+          "name": "Coffee Shop",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/coffeeshop_",
+            "suffix": ".png"
+          }
+        },
+        {
+          "id": 13065,
+          "name": "Restaurant",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/default_",
+            "suffix": ".png"
+          }
+        }
+      ],
+      "chains": [],
+      "distance": 4170,
+      "geocodes": {
+        "main": {
+          "latitude": 55.69535528590248,
+          "longitude": 37.39031050071486
+        }
+      },
+      "location": {
+        "address": "Новая Ул., д. 100",
+        "country": "RU",
+        "cross_street": "Новая ул., 100",
+        "locality": "Москва",
+        "postcode": "",
+        "region": "Moscow Oblast"
+      },
+      "name": "Coffee and the City",
+      "related_places": {
+        "parent": {
+          "fsq_id": "4c2d7a2e3a4d0f471707e486",
+          "name": "Московская школа управления Сколково"
+        }
+      },
+      "timezone": "Europe/Moscow"
+    }
+  ]
+}

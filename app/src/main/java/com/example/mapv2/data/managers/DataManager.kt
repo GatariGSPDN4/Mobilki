@@ -1,7 +1,8 @@
-package com.example.mapv2
+package com.example.mapv2.data.managers
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.example.mapv2.data.dataClasses.User
 
 class DataManager(context: Context) {
     private val APP_PREFERENCES_DATA = "LoginData"

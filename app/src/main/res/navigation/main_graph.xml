@@ -6,7 +6,7 @@
     app:startDestination="@id/registrationFragment">
     <fragment
         android:id="@+id/registrationFragment"
-        android:name="com.example.mapv2.RegistrationFragment"
+        android:name="com.example.mapv2.fragments.RegistrationFragment"
         android:label="fragment_registration"
         tools:layout="@layout/fragment_registration" >
         <action
@@ -18,16 +18,19 @@
     </fragment>
     <fragment
         android:id="@+id/finalFragment2"
-        android:name="com.example.mapv2.FinalFragment"
+        android:name="com.example.mapv2.fragments.FinalFragment"
         android:label="fragment_final"
         tools:layout="@layout/fragment_final" >
         <action
             android:id="@+id/action_finalFragment2_to_registrationFragment"
             app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/action_finalFragment2_to_mapsFragment2"
+            app:destination="@id/mapsFragment2" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment2"
-        android:name="com.example.mapv2.LoginFragment"
+        android:name="com.example.mapv2.fragments.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -36,5 +39,14 @@
         <action
             android:id="@+id/action_loginFragment2_to_registrationFragment"
             app:destination="@id/registrationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapsFragment2"
+        android:name="com.example.mapv2.fragments.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" >
+        <action
+            android:id="@+id/action_mapsFragment2_to_finalFragment2"
+            app:destination="@id/finalFragment2" />
     </fragment>
 </navigation>

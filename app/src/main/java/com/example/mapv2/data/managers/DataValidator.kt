@@ -1,16 +1,23 @@
-package com.example.mapv2
+package com.example.mapv2.data.managers
 
 import android.content.Context
+import com.example.mapv2.DialogueWindow
+import com.example.mapv2.R
+import com.example.mapv2.data.dataClasses.User
+import com.example.mapv2.data.database.UserDao
 
 object DataValidator {
     lateinit var userLoginManager : UserLoginManager
 
-    fun validateReg(data: User, repPassword:String, context:Context,dao: UserDao) : Boolean {
+    fun validateReg(data: User, repPassword:String, context:Context, dao: UserDao) : Boolean {
         if (!validateName(data.name!!,context)) return false
         if (!validateMail(data.mail!!,context)) return false
         if (!validatePassword(data.password!!,repPassword,context)) return false
         if (isUserExist(data.mail!!, context,dao)) {
-            DialogueWindow.showText(context.getString(R.string.ThisAccountAlreadyExistString),context)
+            DialogueWindow.showText(
+                context.getString(R.string.ThisAccountAlreadyExistString),
+                context
+            )
             return false
         }
         return true
@@ -20,7 +27,7 @@ object DataValidator {
         if (!validateMail(mail,context)) return false
         if (!validatePassword(password,context)) return false
         if (!isUserExist(mail,context,dao)) {
-            DialogueWindow.showText(context.getString(R.string.ThisAccountNotExistString),context)
+            DialogueWindow.showText(context.getString(R.string.ThisAccountNotExistString), context)
             return false
         }
         if (!dao.findByMail(mail).password.equals(password)) {
@@ -43,7 +50,7 @@ object DataValidator {
             return false
         }
         if (name.contains(" ")) {
-            DialogueWindow.showText(context.getString(R.string.NameSpacesString),context)
+            DialogueWindow.showText(context.getString(R.string.NameSpacesString), context)
             return false
         }
         return true
@@ -67,7 +74,7 @@ object DataValidator {
             return false
         }
         if (password.contains(" ")) {
-            DialogueWindow.showText(context.getString(R.string.PasswordSpacesString),context)
+            DialogueWindow.showText(context.getString(R.string.PasswordSpacesString), context)
             return false
         }
         return true
