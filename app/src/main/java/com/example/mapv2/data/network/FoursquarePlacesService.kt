@@ -18,8 +18,24 @@ interface FoursquarePlacesService {
 
     @GET("nearby?")
     suspend fun getNearbyPlaces(
-        @Query("ll") ll: Double,
+        @Query("ll") ll: String,
         @Header("Accept") accept: String,
         @Header("Authorization") token: String
     ): JsonData
+
+    @GET("{id}/photos")
+    suspend fun getPhotos(
+        @Path("id") id: String,
+        //@Query("limit") limit: String,
+        //@Query("sort") sort: String,
+        @Header("Accept") accept: String,
+        @Header("Authorization") token: String
+    ): List<Photo>
+
+    @GET("{id}/tips")
+    suspend fun getTips(
+        @Path("id") id: String,
+        @Header("Accept") accept: String,
+        @Header("Authorization") token: String
+    ): List<Tip>
 }

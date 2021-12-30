@@ -25,8 +25,8 @@
             android:id="@+id/action_finalFragment2_to_registrationFragment"
             app:destination="@id/registrationFragment" />
         <action
-            android:id="@+id/action_finalFragment2_to_mapsFragment2"
-            app:destination="@id/mapsFragment2" />
+            android:id="@+id/action_finalFragment2_to_placeInfoFragment"
+            app:destination="@id/placeInfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment2"
@@ -41,12 +41,12 @@
             app:destination="@id/registrationFragment" />
     </fragment>
     <fragment
-        android:id="@+id/mapsFragment2"
-        android:name="com.example.mapv2.fragments.MapsFragment"
-        android:label="fragment_maps"
-        tools:layout="@layout/fragment_maps" >
+        android:id="@+id/placeInfoFragment"
+        android:name="com.example.mapv2.fragments.PlaceInfoFragment"
+        android:label="fragment_place_info"
+        tools:layout="@layout/fragment_place_info" >
         <action
-            android:id="@+id/action_mapsFragment2_to_finalFragment2"
+            android:id="@+id/action_placeInfoFragment_to_finalFragment2"
             app:destination="@id/finalFragment2" />
     </fragment>
 </navigation>

@@ -55,3 +55,23 @@ data class Categories(
     @Json(name = "name")
     val name: String,
 )
+
+@JsonClass(generateAdapter = true)
+data class JsonPhotos(
+    @Json(name = "")
+    public val photos: List<Photo>
+)
+
+@JsonClass(generateAdapter = true)
+data class Photo(
+    @Json(name = "prefix")
+    val prefix:String,
+    @Json(name = "suffix")
+    val suffix:String,
+)
+
+@JsonClass(generateAdapter = true)
+data class Tip(
+    @Json(name = "text")
+    val text: String
+)
