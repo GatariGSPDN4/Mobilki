@@ -33,15 +33,39 @@ class PlacesRepository {
         }
     }
 
-    /*suspend fun getNearbyPlaces(
-        path: String,
+    suspend fun getNearbyPlaces(
+        ll: String,
         accept: String,
         token: String
     ): JsonData? {
         return try {
-            requester.getNearbyPlaces(path,accept,token)
+            requester.getNearbyPlaces(ll,accept,token)
         } catch (exception: HttpException) {
             null
         }
-    }*/
+    }
+    suspend fun getPhotos(
+        id: String,
+        accept: String,
+        token: String
+    ): Photo? {
+        return try {
+            var photos = requester.getPhotos(id,accept,token)
+            photos[0]
+        } catch (exception: HttpException) {
+            null
+        }
+    }
+    suspend fun getTips(
+        id: String,
+        accept: String,
+        token: String
+    ) : List<Tip>? {
+        return try {
+            var tip = requester.getTips(id,accept,token)
+            tip
+        } catch (e: Exception) {
+            null
+        }
+    }
 }

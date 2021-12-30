@@ -26,4 +26,5 @@
     <string name="APIKey">fsq3Ihfvr2KD6QqRjiPXO1modSLzKkoRD1e/TxhqdJJ5B10=</string>
     <string name="acceptJson">application/json</string>
     <string name="thereAroNoPlace">Таких мест нет</string>
+    <string name="NearbyPlaces">Ближайшие места</string>
 </resources>

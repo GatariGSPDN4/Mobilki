@@ -11,34 +11,26 @@
         tools:context=".fragments.RegistrationFragment">
 
 
-        <TextView
-            android:id="@+id/accountInfo"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:text=""
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <Button
-            android:id="@+id/unLogBtn"
+            android:id="@+id/findNearbyBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="52dp"
-            android:text="@string/ExitFromAccountString"
+            android:layout_marginTop="20dp"
+            android:text="@string/NearbyPlaces"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/EditTextLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/map" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/EditTextLayout"
             android:layout_width="256sp"
             android:layout_height="50sp"
             android:layout_marginTop="20sp"
-            android:layout_marginLeft="10sp"
+            android:layout_marginLeft="30sp"
             android:orientation="vertical"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/map">
+            app:layout_constraintTop_toTopOf="parent">
 
             <EditText
                 android:id="@+id/placeNameText"
@@ -53,12 +45,13 @@
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/map"
             android:name="com.google.android.gms.maps.SupportMapFragment"
-            android:layout_width="match_parent"
-            android:layout_height="500dp"
+            android:layout_width="411dp"
+            android:layout_height="545dp"
+            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/accountInfo"
+            app:layout_constraintTop_toBottomOf="@+id/EditTextLayout"
             tools:context=".fragments.MapsFragment" />
 
         <Button
